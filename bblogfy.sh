@@ -20,7 +20,8 @@ for x in `ls -a markdown`; do {
     continue;
   fi
   mkdir -p "generated/${x%.md}";
-  pandoc -s -f markdown -t html5 -o "generated/${x%.md}/index.html" -c style.css "markdown/${x}" --metadata title='...';
+  md2html markdown/${x} --output=generated/${x%.md}/index.html
+  #pandoc -s -f markdown -t html5 -o "generated/${x%.md}/index.html" -c style.css "markdown/${x}" --metadata title='...';
 } done;
 echo "Done"
 
