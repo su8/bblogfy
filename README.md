@@ -1,7 +1,11 @@
-Install `pandoc` and do this:
+Install `md2html` and do this:
 
 ```bash
+git clone https://github.com/mity/md4c
+cd md4c && cmake . && make -j8 && sudo make install
 # from the same folder:
+export PATH=$PATH:/usr/local/lib:/usr/local/include
+sudo ln -sf /usr/local/lib/libmd4c-html.so.0.5.2 /usr/lib/libmd4c-html.so.0
 bash bblogfy.sh # wait a moment to generate the blog posts
 ```
 
